@@ -27,6 +27,12 @@ void setup() {
   // put your setup code here, to run once:
   Serial.begin(115200);
   relay.setAddress(0, 0);
+  for(int i = 1; i < 25; i++){
+    relay.turnOnRelay(i);
+    delay(200);
+    relay.turnOffRelay(i);
+    delay(200);
+  }
 }
 
 void loop() {
